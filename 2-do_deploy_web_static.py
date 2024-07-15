@@ -22,6 +22,7 @@ def do_deploy(archive_path):
     file = archive_path.split("/")[-1]
     name = file.split(".")[0]
 
+
     if put(archive_path, "/tmp/{}".format(file)).failed is True:
         return False
     if run("rm -rf /data/web_static/releases/{}/".
